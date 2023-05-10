@@ -4,15 +4,23 @@
     {
       "contract": "TetherToken",
       "constructors": [1000000000, "TetherToken", "USDT", 5],
-      "payable": 0
+      "constructorPayableEthAmount": 0
     },
     {
       "contract": "SealToken",
       "constructors": [1000000000, "TetherToken", "USDT", 5],
-      "payable": 0
+      "constructorPayableEthAmount": 0
+    }, 
+    {
+      "contract": "ContractAddressTracker",
+      "constructors": [
+        "{{SealToken}}",
+        "{{TetherToken}}"
+      ],
+      "constructorPayableEthAmount": 0,
+      "dependentContracts": ["SealToken", "TetherToken"]
     }
   ],
   "targetEnvironment": "sepolia",
   "cohortId": "pandasteak"
 }
-
